@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: playwright-job
+  namespace: qa-automation
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 30 # Delete Once execution done
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: playwright
+          image: bhargavch/playwright-ui:1.0
+          ports:
+            - containerPort: 6080

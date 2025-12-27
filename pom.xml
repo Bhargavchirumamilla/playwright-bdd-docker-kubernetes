@@ -1,0 +1,53 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>com.company</groupId>
+ <artifactId>playwright-bdd</artifactId>
+ <version>1.0</version>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+     <source>8</source>
+     <target>8</target>
+    </configuration>
+   </plugin>
+  </plugins>
+ </build>
+ <properties>
+  <java.version>11</java.version>
+  <playwright.version>1.43.0</playwright.version>
+  <cucumber.version>7.14.0</cucumber.version>
+ </properties>
+
+ <dependencies>
+  <dependency>
+   <groupId>com.microsoft.playwright</groupId>
+   <artifactId>playwright</artifactId>
+   <version>1.56.0</version>
+  </dependency>
+
+
+  <dependency>
+   <groupId>io.cucumber</groupId>
+   <artifactId>cucumber-java</artifactId>
+   <version>7.14.0</version>
+  </dependency>
+
+  <dependency>
+   <groupId>io.cucumber</groupId>
+   <artifactId>cucumber-testng</artifactId>
+   <version>7.14.0</version>
+  </dependency>
+
+  <dependency>
+   <groupId>org.testng</groupId>
+   <artifactId>testng</artifactId>
+   <version>7.9.0</version>
+  </dependency>
+ </dependencies>
+</project>

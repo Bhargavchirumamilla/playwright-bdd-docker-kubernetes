@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playwright-deployment
+  namespace: qa-automation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: playwright
+  template:
+    metadata:
+      labels:
+        app: playwright
+    spec:
+      containers:
+        - name: playwright
+          image: bhargavch/playwright-ui:1.0
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/bash","-c"]
+          args:
+            - |
+              Xvfb :99 -screen 0 1920x1080x24 &
+              fluxbox &
+              x11vnc -display :99 -rfbport 5900 -nopw -forever -shared &
+              websockify --web=/usr/share/novnc/ 6080 localhost:5900 &
+              mvn test
+              echo "Tests done. Keeping pod alive"
+              tail -f /dev/null
+          ports:
+            - containerPort: 6080
