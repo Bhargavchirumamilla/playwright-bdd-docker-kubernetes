@@ -18,7 +18,7 @@ screenshots/*
 
 !traces/.gitkeep
 !videos/.gitkeep
-!traces/.gitkeep
+!screenshots/.gitkeep
 
 ################################
 # OS files
