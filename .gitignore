@@ -10,11 +10,15 @@
 target/
 
 ################################
-# Playwright / Test Artifacts
+# Playwright artifacts (keep folders)
 ################################
-traces/
-videos/
-screenshots/
+traces/*
+videos/*
+screenshots/*
+
+!traces/.gitkeep
+!videos/.gitkeep
+!traces/.gitkeep
 
 ################################
 # OS files
