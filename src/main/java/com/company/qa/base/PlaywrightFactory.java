@@ -7,7 +7,6 @@ import utils.PropertyReader;
 
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.List;
 
 public final class PlaywrightFactory {
 
@@ -23,6 +22,7 @@ public final class PlaywrightFactory {
         String browserName = PropertyReader.getBrowser();
         boolean headless = PropertyReader.isHeadless();
         String appUrl = PropertyReader.getUrl();
+       double timeout = Double.parseDouble(PropertyReader.getTimeout());
 
         playwright.set(Playwright.create());
 
@@ -83,7 +83,7 @@ public final class PlaywrightFactory {
                 appUrl,
                 new Page.NavigateOptions()
                         .setWaitUntil(WaitUntilState.DOMCONTENTLOADED)
-                        .setTimeout(60000)
+                        .setTimeout(timeout)
                         //.setWaitUntil(WaitUntilState.LOAD)
         );
     }

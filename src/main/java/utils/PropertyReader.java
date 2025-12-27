@@ -42,6 +42,10 @@ public class PropertyReader {
         return envProps.getProperty("url");
     }
 
+    public static String getTimeout() {
+        return envProps.getProperty("timeout");
+    }
+
     public static String getBrowser() {
         return envProps.getProperty("browser");
     }

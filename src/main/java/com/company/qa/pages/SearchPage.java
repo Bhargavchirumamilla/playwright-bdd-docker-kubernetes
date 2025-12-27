@@ -1,6 +1,7 @@
 package com.company.qa.pages;
 
 import utils.CommonUtils;
+import com.microsoft.playwright.Page;
 
 public class SearchPage extends CommonUtils {
 
@@ -14,10 +15,8 @@ public class SearchPage extends CommonUtils {
 
 //span[normalize-space()='Watchlist']
 
-    public SearchPage(com.microsoft.playwright.Page page) {
+    public SearchPage(Page page) {
         super(page);
-
-
     }
 
     public void search(String searchContent) {

@@ -1,6 +1,7 @@
 
 package com.company.qa.pages;
 
+import com.microsoft.playwright.Page;
 import utils.CommonUtils;
 
 public class LoginPage extends CommonUtils {
@@ -12,12 +13,12 @@ public class LoginPage extends CommonUtils {
 
     public static final String LOGINSpan = "//button[@type='button']";
 
-    public LoginPage(com.microsoft.playwright.Page page) {
+    public LoginPage(Page page) {
         super(page);
     }
 
     public void login(String userName) {
-       fill(USER, userName);
+        fill(USER, userName);
 
 
     }
