@@ -9,6 +9,7 @@ import com.microsoft.playwright.options.WaitForSelectorState;
 
 public class CommonUtils {
     protected Page page;
+    double timeout = Double.parseDouble(PropertyReader.getTimeout());
 
     public CommonUtils(Page page) {
         this.page = page;
@@ -57,12 +58,11 @@ public class CommonUtils {
 
             locator.waitFor(new Locator.WaitForOptions()
                     .setState(WaitForSelectorState.VISIBLE)
-                    .setTimeout(60000));
+                    .setTimeout(timeout));
 
             locator.scrollIntoViewIfNeeded();
-
             locator.click(new Locator.ClickOptions()
-                    .setTimeout(60000)
+                    .setTimeout(timeout)
                     .setForce(true));
         }
     }

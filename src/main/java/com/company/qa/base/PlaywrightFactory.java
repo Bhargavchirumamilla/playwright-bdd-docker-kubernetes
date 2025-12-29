@@ -22,7 +22,7 @@ public final class PlaywrightFactory {
         String browserName = PropertyReader.getBrowser();
         boolean headless = PropertyReader.isHeadless();
         String appUrl = PropertyReader.getUrl();
-       double timeout = Double.parseDouble(PropertyReader.getTimeout());
+        double timeout = Double.parseDouble(PropertyReader.getTimeout());
 
         playwright.set(Playwright.create());
 

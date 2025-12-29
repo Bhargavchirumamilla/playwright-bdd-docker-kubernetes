@@ -6,6 +6,7 @@ import com.company.qa.pages.LoginPage;
 import com.microsoft.playwright.Page;
 import io.cucumber.java.en.*;
 import org.testng.asserts.SoftAssert;
+import utils.PropertyReader;
 
 public class LoginSteps {
     LoginPage loginPage;
@@ -22,7 +23,8 @@ public class LoginSteps {
 
     @Then("user sends username and passcode")
     public void userSendsUsernameAndPasscode() {
-        loginPage.login("admin@zee.com");
+        loginPage.login(PropertyReader.getTestData("login.username"));
+
     }
 
     @And("login success")
